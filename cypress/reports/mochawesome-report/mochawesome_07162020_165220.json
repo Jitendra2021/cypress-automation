@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-07-16T11:21:20.147Z",
+    "end": "2020-07-16T11:22:20.596Z",
+    "duration": 60449,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "f9b1da3d-b4ed-4c87-817c-3e65151bb6b0",
+      "title": "",
+      "fullFile": "cypress/integration/prac/dropdown-pom.spec.js",
+      "file": "cypress/integration/prac/dropdown-pom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "66ce8fec-fbea-4def-8c2f-2531e7dce6be",
+          "title": "test dropdown - pom",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001: Select a value from the drop down",
+              "fullTitle": "test dropdown - pom TC001: Select a value from the drop down",
+              "timedOut": null,
+              "duration": 60387,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_dropdown[\"default\"].getDropdown().select('Tuesday');\n_dropdown[\"default\"].getSelectedDay().should('contain.text', 'Tuesday');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `test dropdown - pom`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `test dropdown - pom`\n    at timedOutWaitingForPageLoad (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:155493:13)\n    at https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:156469:16\n    at tryCatcher (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:10130:23)\n    at https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:5252:41\n    at tryCatcher (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:10130:23)\n    at Promise._settlePromiseFromHandler (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8065:31)\n    at Promise._settlePromise (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8122:18)\n    at Promise._settlePromise0 (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8167:10)\n    at Promise._settlePromises (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8243:18)\n    at _drainQueueStep (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4837:12)\n    at _drainQueue (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4830:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4846:5)\n    at Async.drainQueues (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4716:14)\nFrom Your Spec Code:\n    at Context.eval (https://www.seleniumeasy.com/__cypress/tests?p=cypress/integration/prac/dropdown-pom.spec.js:11:8)",
+                "diff": null
+              },
+              "uuid": "8d1ba515-8da9-48d8-920a-e9027d4f782e",
+              "parentUUID": "66ce8fec-fbea-4def-8c2f-2531e7dce6be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002: Loop throught the dropdown using fixtures",
+              "fullTitle": "test dropdown - pom TC002: Loop throught the dropdown using fixtures",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('#select-demo')\n// data from the fixture file cannot be used outside this test case\ncy.fixture('example.json').then(function (days) {\n  for (var day in days) {\n    _dropdown[\"default\"].getDropdown().select(days[day]);\n    _dropdown[\"default\"].getSelectedDay().should('contain.text', days[day]);\n  }\n});",
+              "err": {},
+              "uuid": "49b01d60-d34a-4eb6-ade6-f0ce911cf844",
+              "parentUUID": "66ce8fec-fbea-4def-8c2f-2531e7dce6be",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8d1ba515-8da9-48d8-920a-e9027d4f782e"
+          ],
+          "pending": [],
+          "skipped": [
+            "49b01d60-d34a-4eb6-ade6-f0ce911cf844"
+          ],
+          "duration": 60387,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

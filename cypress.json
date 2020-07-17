@@ -1,0 +1,12 @@
+{
+  "baseUrl": "https://www.seleniumeasy.com",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports/mochawesome-report",
+    "quite": true,
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "timestamp": "mmddyyyy_HHMMss"
+  }
+}

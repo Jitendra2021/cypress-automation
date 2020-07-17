@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-07-16T11:21:14.252Z",
+    "end": "2020-07-16T11:21:17.486Z",
+    "duration": 3234,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bc9408d7-1d53-4552-a3ad-b60b20b244b7",
+      "title": "",
+      "fullFile": "cypress/integration/prac/apiTest.spec.js",
+      "file": "cypress/integration/prac/apiTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "297b00e1-33e4-4e70-94af-771d25574bcd",
+          "title": "API test  get, post, put, delete",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test GET API",
+              "fullTitle": "API test  get, post, put, delete Test GET API",
+              "timedOut": null,
+              "duration": 545,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/api/v1/employees').then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.not.be[\"null\"];\n});",
+              "err": {},
+              "uuid": "0c36f586-9306-4c06-a2d2-adfc8510abb8",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test POST API ",
+              "fullTitle": "API test  get, post, put, delete Test POST API ",
+              "timedOut": null,
+              "duration": 917,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var item = {\n  \"name\": \"test jit\",\n  \"salary\": \"12300\",\n  \"age\": \"23\"\n};\ncy.request('POST', '/api/v1/create', item).then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body.data).to.have.property('name', 'test jit');\n  id = response.body.data.id;\n  cy.log(id);\n});",
+              "err": {},
+              "uuid": "70368dd6-bee9-448c-b7d7-c442004a6eef",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test PUT API - update record created previously",
+              "fullTitle": "API test  get, post, put, delete Test PUT API - update record created previously",
+              "timedOut": null,
+              "duration": 917,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var item = {\n  \"name\": \"test1\"\n}; // cy.log(id)\ncy.request({\n  method: 'PUT',\n  url: 'api/v1/update/' + id,\n  body: item\n}).then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body.data).to.have.property('employee_name', 'test1');\n});",
+              "err": {},
+              "uuid": "261c1334-6e9d-4d40-97d0-2b429005eeb9",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test DELETE API",
+              "fullTitle": "API test  get, post, put, delete Test DELETE API",
+              "timedOut": null,
+              "duration": 829,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'DELETE',\n  url: 'api/v1/delete/' + id\n}).then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.have.property('message', 'successfully! deleted Records');\n});",
+              "err": {},
+              "uuid": "bbb47c7f-1f1d-494a-bf91-ddcb6981e5fd",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c36f586-9306-4c06-a2d2-adfc8510abb8",
+            "70368dd6-bee9-448c-b7d7-c442004a6eef",
+            "261c1334-6e9d-4d40-97d0-2b429005eeb9",
+            "bbb47c7f-1f1d-494a-bf91-ddcb6981e5fd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3208,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

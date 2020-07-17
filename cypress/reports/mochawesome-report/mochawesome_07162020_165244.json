@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-07-16T11:22:24.983Z",
+    "end": "2020-07-16T11:22:44.226Z",
+    "duration": 19243,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "61224214-51ab-46d7-ba31-fad383c0c1f3",
+      "title": "",
+      "fullFile": "cypress/integration/prac/dropdown.spec.js",
+      "file": "cypress/integration/prac/dropdown.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64428aeb-9601-4bab-992c-6c0ba3996d3e",
+          "title": "test dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001: Select a value from the drop down",
+              "fullTitle": "test dropdown TC001: Select a value from the drop down",
+              "timedOut": null,
+              "duration": 16169,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.form-control[id=select-demo]').select('Tuesday');\ncy.get('.selected-value').should('contain.text', 'Tuesday');",
+              "err": {},
+              "uuid": "c61fd73f-da70-46b7-be3f-3233d413771b",
+              "parentUUID": "64428aeb-9601-4bab-992c-6c0ba3996d3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002: Loop throught the dropdown using fixtures",
+              "fullTitle": "test dropdown TC002: Loop throught the dropdown using fixtures",
+              "timedOut": null,
+              "duration": 3028,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('#select-demo')\nfor (var day in days) {\n  cy.get('.form-control[id=select-demo]').select(days[day]);\n  cy.get('.selected-value').should('contain.text', days[day]);\n}",
+              "err": {},
+              "uuid": "fe652c04-927b-4138-a5de-b67e12af486d",
+              "parentUUID": "64428aeb-9601-4bab-992c-6c0ba3996d3e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c61fd73f-da70-46b7-be3f-3233d413771b",
+            "fe652c04-927b-4138-a5de-b67e12af486d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

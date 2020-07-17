@@ -1,0 +1,482 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 12,
+    "passes": 9,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-07-16T11:23:50.578Z",
+    "end": "2020-07-16T11:23:50.578Z",
+    "duration": 130818,
+    "testsRegistered": 12,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "bc9408d7-1d53-4552-a3ad-b60b20b244b7",
+      "title": "",
+      "fullFile": "cypress/integration/prac/apiTest.spec.js",
+      "file": "cypress/integration/prac/apiTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "297b00e1-33e4-4e70-94af-771d25574bcd",
+          "title": "API test  get, post, put, delete",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test GET API",
+              "fullTitle": "API test  get, post, put, delete Test GET API",
+              "timedOut": null,
+              "duration": 545,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/api/v1/employees').then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.not.be[\"null\"];\n});",
+              "err": {},
+              "uuid": "0c36f586-9306-4c06-a2d2-adfc8510abb8",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test POST API ",
+              "fullTitle": "API test  get, post, put, delete Test POST API ",
+              "timedOut": null,
+              "duration": 917,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var item = {\n  \"name\": \"test jit\",\n  \"salary\": \"12300\",\n  \"age\": \"23\"\n};\ncy.request('POST', '/api/v1/create', item).then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body.data).to.have.property('name', 'test jit');\n  id = response.body.data.id;\n  cy.log(id);\n});",
+              "err": {},
+              "uuid": "70368dd6-bee9-448c-b7d7-c442004a6eef",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test PUT API - update record created previously",
+              "fullTitle": "API test  get, post, put, delete Test PUT API - update record created previously",
+              "timedOut": null,
+              "duration": 917,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var item = {\n  \"name\": \"test1\"\n}; // cy.log(id)\ncy.request({\n  method: 'PUT',\n  url: 'api/v1/update/' + id,\n  body: item\n}).then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body.data).to.have.property('employee_name', 'test1');\n});",
+              "err": {},
+              "uuid": "261c1334-6e9d-4d40-97d0-2b429005eeb9",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test DELETE API",
+              "fullTitle": "API test  get, post, put, delete Test DELETE API",
+              "timedOut": null,
+              "duration": 829,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'DELETE',\n  url: 'api/v1/delete/' + id\n}).then(function (response) {\n  expect(response).to.have.property('status', 200);\n  expect(response.body).to.have.property('message', 'successfully! deleted Records');\n});",
+              "err": {},
+              "uuid": "bbb47c7f-1f1d-494a-bf91-ddcb6981e5fd",
+              "parentUUID": "297b00e1-33e4-4e70-94af-771d25574bcd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c36f586-9306-4c06-a2d2-adfc8510abb8",
+            "70368dd6-bee9-448c-b7d7-c442004a6eef",
+            "261c1334-6e9d-4d40-97d0-2b429005eeb9",
+            "bbb47c7f-1f1d-494a-bf91-ddcb6981e5fd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3208,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f9b1da3d-b4ed-4c87-817c-3e65151bb6b0",
+      "title": "",
+      "fullFile": "cypress/integration/prac/dropdown-pom.spec.js",
+      "file": "cypress/integration/prac/dropdown-pom.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "66ce8fec-fbea-4def-8c2f-2531e7dce6be",
+          "title": "test dropdown - pom",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001: Select a value from the drop down",
+              "fullTitle": "test dropdown - pom TC001: Select a value from the drop down",
+              "timedOut": null,
+              "duration": 60387,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_dropdown[\"default\"].getDropdown().select('Tuesday');\n_dropdown[\"default\"].getSelectedDay().should('contain.text', 'Tuesday');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `test dropdown - pom`",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `test dropdown - pom`\n    at timedOutWaitingForPageLoad (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:155493:13)\n    at https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:156469:16\n    at tryCatcher (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:10130:23)\n    at https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:5252:41\n    at tryCatcher (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:10130:23)\n    at Promise._settlePromiseFromHandler (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8065:31)\n    at Promise._settlePromise (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8122:18)\n    at Promise._settlePromise0 (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8167:10)\n    at Promise._settlePromises (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:8243:18)\n    at _drainQueueStep (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4837:12)\n    at _drainQueue (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4830:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4846:5)\n    at Async.drainQueues (https://www.seleniumeasy.com/__cypress/runner/cypress_runner.js:4716:14)\nFrom Your Spec Code:\n    at Context.eval (https://www.seleniumeasy.com/__cypress/tests?p=cypress/integration/prac/dropdown-pom.spec.js:11:8)",
+                "diff": null
+              },
+              "uuid": "8d1ba515-8da9-48d8-920a-e9027d4f782e",
+              "parentUUID": "66ce8fec-fbea-4def-8c2f-2531e7dce6be",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002: Loop throught the dropdown using fixtures",
+              "fullTitle": "test dropdown - pom TC002: Loop throught the dropdown using fixtures",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('#select-demo')\n// data from the fixture file cannot be used outside this test case\ncy.fixture('example.json').then(function (days) {\n  for (var day in days) {\n    _dropdown[\"default\"].getDropdown().select(days[day]);\n    _dropdown[\"default\"].getSelectedDay().should('contain.text', days[day]);\n  }\n});",
+              "err": {},
+              "uuid": "49b01d60-d34a-4eb6-ade6-f0ce911cf844",
+              "parentUUID": "66ce8fec-fbea-4def-8c2f-2531e7dce6be",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8d1ba515-8da9-48d8-920a-e9027d4f782e"
+          ],
+          "pending": [],
+          "skipped": [
+            "49b01d60-d34a-4eb6-ade6-f0ce911cf844"
+          ],
+          "duration": 60387,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "61224214-51ab-46d7-ba31-fad383c0c1f3",
+      "title": "",
+      "fullFile": "cypress/integration/prac/dropdown.spec.js",
+      "file": "cypress/integration/prac/dropdown.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64428aeb-9601-4bab-992c-6c0ba3996d3e",
+          "title": "test dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001: Select a value from the drop down",
+              "fullTitle": "test dropdown TC001: Select a value from the drop down",
+              "timedOut": null,
+              "duration": 16169,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.form-control[id=select-demo]').select('Tuesday');\ncy.get('.selected-value').should('contain.text', 'Tuesday');",
+              "err": {},
+              "uuid": "c61fd73f-da70-46b7-be3f-3233d413771b",
+              "parentUUID": "64428aeb-9601-4bab-992c-6c0ba3996d3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002: Loop throught the dropdown using fixtures",
+              "fullTitle": "test dropdown TC002: Loop throught the dropdown using fixtures",
+              "timedOut": null,
+              "duration": 3028,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('#select-demo')\nfor (var day in days) {\n  cy.get('.form-control[id=select-demo]').select(days[day]);\n  cy.get('.selected-value').should('contain.text', days[day]);\n}",
+              "err": {},
+              "uuid": "fe652c04-927b-4138-a5de-b67e12af486d",
+              "parentUUID": "64428aeb-9601-4bab-992c-6c0ba3996d3e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c61fd73f-da70-46b7-be3f-3233d413771b",
+            "fe652c04-927b-4138-a5de-b67e12af486d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "32572391-258f-4da6-99e8-d183280b582b",
+      "title": "",
+      "fullFile": "cypress/integration/prac/login.spec.js",
+      "file": "cypress/integration/prac/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6659f0e-2024-481a-be75-cb272b9d72af",
+          "title": "Login - orange hrm",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001 Login - positive",
+              "fullTitle": "Login - orange hrm TC001 Login - positive",
+              "timedOut": null,
+              "duration": 31489,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/');\n_login[\"default\"].getUsername().type('Admin');\n_login[\"default\"].getPassword().type('admin123');\n_login[\"default\"].getLoginButton().click();\ncy.title().should('eq', 'OrangeHRM');",
+              "err": {},
+              "uuid": "16751a19-f705-473b-9e52-bd077234d784",
+              "parentUUID": "e6659f0e-2024-481a-be75-cb272b9d72af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002 Login - positive",
+              "fullTitle": "Login - orange hrm TC002 Login - positive",
+              "timedOut": null,
+              "duration": 8578,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('creds.json').then(function (creds) {\n  cy.visit('https://opensource-demo.orangehrmlive.com/'); //             cy.log(creds)\n  //             cy.log(creds.user1.username + ' ' + creds.user1.password)\n  _login[\"default\"].getUsername().type(creds.user1.username);\n  _login[\"default\"].getPassword().type(creds.user1.password);\n  _login[\"default\"].getLoginButton().click();\n  _login[\"default\"].getErrorMessage().should('be.visible');\n});",
+              "err": {},
+              "uuid": "f2cb8165-2944-4917-aeb7-88c7d03e35c7",
+              "parentUUID": "e6659f0e-2024-481a-be75-cb272b9d72af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "16751a19-f705-473b-9e52-bd077234d784",
+            "f2cb8165-2944-4917-aeb7-88c7d03e35c7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40067,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0e859afa-65c4-481f-95ce-e84f97e62746",
+      "title": "",
+      "fullFile": "cypress/integration/prac/tableFilter.spec.js",
+      "file": "cypress/integration/prac/tableFilter.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0818b620-a249-44cf-8f6d-e1e949cd32f2",
+          "title": "test table filter - pom",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001: Select a value from the drop down",
+              "fullTitle": "test table filter - pom TC001: Select a value from the drop down",
+              "timedOut": null,
+              "duration": 6302,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_homepage[\"default\"].getTableDropdown().click();\n_homepage[\"default\"].getTableFilterDropdownValue().click();\ncy.title().should('eq', 'Selenium Easy - Table Data Filter Demo');\n_tableFilter[\"default\"].getRedButton().click();\ncy.get();",
+              "err": {
+                "message": "TypeError: _homepage.default.getTableDropdown is not a function",
+                "estack": "TypeError: _homepage.default.getTableDropdown is not a function\n    at Context.eval (https://www.seleniumeasy.com/__cypress/tests?p=cypress/integration/prac/tableFilter.spec.js:16:26)",
+                "diff": null
+              },
+              "uuid": "f3ca382c-b840-49d5-85c3-376e7ada866f",
+              "parentUUID": "0818b620-a249-44cf-8f6d-e1e949cd32f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002: Loop throught the dropdown using fixtures",
+              "fullTitle": "test table filter - pom TC002: Loop throught the dropdown using fixtures",
+              "timedOut": null,
+              "duration": 1657,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "cdd9f8fb-4e47-4cf8-8727-419af1a751d7",
+              "parentUUID": "0818b620-a249-44cf-8f6d-e1e949cd32f2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cdd9f8fb-4e47-4cf8-8727-419af1a751d7"
+          ],
+          "failures": [
+            "f3ca382c-b840-49d5-85c3-376e7ada866f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7959,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

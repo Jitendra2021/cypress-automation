@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-07-16T11:22:47.416Z",
+    "end": "2020-07-16T11:23:34.828Z",
+    "duration": 47412,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "32572391-258f-4da6-99e8-d183280b582b",
+      "title": "",
+      "fullFile": "cypress/integration/prac/login.spec.js",
+      "file": "cypress/integration/prac/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e6659f0e-2024-481a-be75-cb272b9d72af",
+          "title": "Login - orange hrm",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC001 Login - positive",
+              "fullTitle": "Login - orange hrm TC001 Login - positive",
+              "timedOut": null,
+              "duration": 31489,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/');\n_login[\"default\"].getUsername().type('Admin');\n_login[\"default\"].getPassword().type('admin123');\n_login[\"default\"].getLoginButton().click();\ncy.title().should('eq', 'OrangeHRM');",
+              "err": {},
+              "uuid": "16751a19-f705-473b-9e52-bd077234d784",
+              "parentUUID": "e6659f0e-2024-481a-be75-cb272b9d72af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC002 Login - positive",
+              "fullTitle": "Login - orange hrm TC002 Login - positive",
+              "timedOut": null,
+              "duration": 8578,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('creds.json').then(function (creds) {\n  cy.visit('https://opensource-demo.orangehrmlive.com/'); //             cy.log(creds)\n  //             cy.log(creds.user1.username + ' ' + creds.user1.password)\n  _login[\"default\"].getUsername().type(creds.user1.username);\n  _login[\"default\"].getPassword().type(creds.user1.password);\n  _login[\"default\"].getLoginButton().click();\n  _login[\"default\"].getErrorMessage().should('be.visible');\n});",
+              "err": {},
+              "uuid": "f2cb8165-2944-4917-aeb7-88c7d03e35c7",
+              "parentUUID": "e6659f0e-2024-481a-be75-cb272b9d72af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "16751a19-f705-473b-9e52-bd077234d784",
+            "f2cb8165-2944-4917-aeb7-88c7d03e35c7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40067,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
